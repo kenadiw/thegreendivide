@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Green Divide | The Data</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f2e9;
+            color: #25332d;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: Georgia, serif;
+            font-weight: normal;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: #f8f6ef;
+            border-bottom: 1px solid #ddd8cb;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 17px;
+            font-weight: bold;
+            color: #173e31;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            font-size: 12px;
+            padding: 8px;
+        }
+
+        .nav-links a:hover {
+            color: #b87550;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 75px 0 65px;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 10px;
+            color: #a47d43;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #777;
+            font-size: 14px;
+            max-width: 680px;
+        }
+
+        /* SECTION HEADER */
+
+        .section-heading {
+            background: #c9a15a;
+            padding: 20px 0;
+        }
+
+        .section-heading p {
+            font-family: Georgia, serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        /* DATA INTRO */
+
+        .data-section {
+            padding: 65px 0;
+        }
+
+        .data-section h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            color: #777;
+            font-size: 13px;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        /* DATA CARDS */
+
+        .data-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .data-card {
+            background: #faf9f4;
+            border: 1px solid #ddd8cb;
+            padding: 25px;
+            border-radius: 5px;
+        }
+
+        .data-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .data-card p {
+            font-size: 12px;
+            color: #777;
+        }
+
+        /* DISPARITY SECTION */
+
+        .disparity {
+            background: #214d3e;
+            color: white;
+            padding: 65px 0;
+        }
+
+        .disparity h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .disparity p {
+            color: #d5ddd7;
+            font-size: 13px;
+            max-width: 700px;
+        }
+
+        .disparity-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .disparity-card {
+            background: #315d4d;
+            padding: 25px;
+            border: 1px solid #547566;
+            border-radius: 5px;
+        }
+
+        .disparity-card h3 {
+            color: #e2bd7c;
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .disparity-card p {
+            font-size: 12px;
+        }
+
+        /* RESEARCH SECTION */
+
+        .research {
+            padding: 65px 0;
+        }
+
+        .research h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .research-list {
+            margin-top: 25px;
+            border-top: 1px solid #ddd8cb;
+        }
+
+        .research-item {
+            padding: 22px 0;
+            border-bottom: 1px solid #ddd8cb;
+        }
+
+        .research-item h3 {
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .research-item p {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .research-item a {
+            color: #a27642;
+            font-size: 12px;
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #102a21;
+            color: white;
+            padding: 30px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .footer-logo {
+            font-family: Georgia, serif;
+            font-size: 17px;
+        }
+
+        .footer-text {
+            color: #aebbb3;
+            font-size: 10px;
+            max-width: 350px;
+            margin-top: 8px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #c4cec8;
+            text-decoration: none;
+            font-size: 11px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #2d473d;
+            margin-top: 25px;
+            padding-top: 15px;
+            font-size: 9px;
+            color: #718078;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .data-cards,
+            .disparity-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                The Green Divide
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#timeline">History</a>
+                <a href="data.html">The Data</a>
+                <a href="index.html#correction">Community Input</a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+        <div class="container">
+
+            <p class="eyebrow">Research • Statistics • Evidence</p>
+
+            <h1>The Data Behind the Divide.</h1>
+
+            <p>
+                Understanding the impact of marijuana criminalization
+                requires looking beyond legislation. Research and
+                statistics help reveal how enforcement has affected
+                different communities throughout the United States.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- GOLD HEADER -->
+
+    <div class="section-heading">
+        <div class="container">
+            <p>UNDERSTANDING THE NUMBERS</p>
+        </div>
+    </div>
+
+
+    <!-- DATA OVERVIEW -->
+
+    <section class="data-section">
+        <div class="container">
+
+            <p class="eyebrow">The Research</p>
+
+            <h2>What Should We Be Measuring?</h2>
+
+            <p class="section-description">
+                Looking at marijuana enforcement involves more than
+                counting arrests. Different measurements help explain
+                how criminalization affects individuals and communities.
+            </p>
+
+            <div class="data-cards">
+
+                <div class="data-card">
+                    <h3>Arrest Rates</h3>
+                    <p>
+                        Examining the number of marijuana-related
+                        arrests across different racial and
+                        demographic groups.
+                    </p>
+                </div>
+
+                <div class="data-card">
+                    <h3>Enforcement Patterns</h3>
+                    <p>
+                        Exploring differences in how marijuana laws
+                        are enforced across locations and communities.
+                    </p>
+                </div>
+
+                <div class="data-card">
+                    <h3>Long-Term Effects</h3>
+                    <p>
+                        Understanding how arrests and criminal
+                        records can affect employment, education,
+                        and future opportunities.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- DISPARITY SECTION -->
+
+    <section class="disparity">
+        <div class="container">
+
+            <p class="eyebrow">Examining Enforcement</p>
+
+            <h2>Why Arrest Disparities Matter</h2>
+
+            <p>
+                Marijuana laws have affected communities differently.
+                Comparing arrest data can help identify differences
+                in enforcement and raise questions about fairness
+                within the criminal justice system.
+            </p>
+
+            <div class="disparity-cards">
+
+                <div class="disparity-card">
+                    <h3>Racial Differences</h3>
+                    <p>
+                        Research comparing arrest rates can help
+                        identify racial disparities in marijuana
+                        enforcement, even when marijuana use rates
+                        are similar across groups.
+                    </p>
+                </div>
+
+                <div class="disparity-card">
+                    <h3>Community Impact</h3>
+                    <p>
+                        Arrests can create lasting consequences
+                        for individuals, families, and communities,
+                        extending beyond the initial interaction
+                        with law enforcement.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- RESEARCH AND SOURCES -->
+
+    <section class="research">
+        <div class="container">
+
+            <p class="eyebrow">Supporting Evidence</p>
+
+            <h2>Research and Data Sources</h2>
+
+            <p class="section-description">
+                Reliable research is important when examining
+                marijuana criminalization. The following organizations
+                provide resources that can be used to investigate
+                arrest trends, enforcement, and criminal justice policy.
+            </p>
+
+            <div class="research-list">
+
+                <div class="research-item">
+                    <h3>American Civil Liberties Union (ACLU)</h3>
+                    <p>
+                        Research and reports examining racial
+                        disparities in marijuana arrests and
+                        criminal justice enforcement.
+                    </p>
+                    <a href="https://www.aclu.org/issues/criminal-law-reform"
+                       target="_blank" rel="noopener noreferrer">
+                        Explore ACLU Research →
+                    </a>
+                </div>
+
+                <div class="research-item">
+                    <h3>Federal Bureau of Investigation (FBI)</h3>
+                    <p>
+                        Crime data and arrest information that
+                        can help researchers examine enforcement
+                        patterns throughout the United States.
+                    </p>
+                    <a href="https://cde.ucr.cjis.gov/"
+                       target="_blank" rel="noopener noreferrer">
+                        Explore FBI Crime Data →
+                    </a>
+                </div>
+
+                <div class="research-item">
+                    <h3>Pew Research Center</h3>
+                    <p>
+                        Research and public opinion studies
+                        examining marijuana policy, legalization,
+                        and changing attitudes in the United States.
+                    </p>
+                    <a href="https://www.pewresearch.org/"
+                       target="_blank" rel="noopener noreferrer">
+                        Explore Pew Research →
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div>
+                    <div class="footer-logo">
+                        The Green Divide
+                    </div>
+
+                    <p class="footer-text">
+                        A research-based look at the history,
+                        data, and policies surrounding marijuana
+                        criminalization.
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#timeline">History</a>
+                    <a href="data.html">The Data</a>
+                    <a href="index.html#correction">Submit</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                © 2026 The Green Divide. Educational project.
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
